@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermo Air Systems King | Professional HVAC Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --green: #14e414;
+      --dark-green: #155f2d;
+      --light-green: #2e9e4f;
+      --deep-green: #0f4f24;
+      --gray: #f4f6f5;
+      --text: #333;
+      --white: #ffffff;
+    }
+
+    /* Universal Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: var(--gray); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
+
+    /* Header & Hero */
+    header { 
+      background: linear-gradient(135deg, var(--deep-green), var(--light-green)); 
+      color: var(--white); 
+      padding: 30px 15px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .top-bar { 
+      width: 100%;
+      max-width: 1200px; 
+      display: flex; 
+      justify-content: space-between; 
+      flex-wrap: wrap; 
+      gap: 10px;
+      font-size: 14px; 
+      padding-bottom: 15px; 
+    }
+    .top-bar a { color: white; text-decoration: none; }
+
+    .hero h1 { font-size: clamp(1.5rem, 5vw, 2.2rem); letter-spacing: 1px; text-transform: uppercase; }
+    .hero span { color: #d7ffd7; }
+    .hero p { font-size: 14px; opacity: 0.9; max-width: 700px; margin: 10px auto 0; }
+
+    /* Navbar with Flexbox */
+    nav { 
+      background: #0f4f24; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    }
+    nav ul { 
+      max-width: 1200px; 
+      margin: auto; 
+      list-style: none; 
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+    nav a { 
+      display: block; 
+      padding: 12px 18px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 12px; 
+      font-weight: 500; 
+      text-transform: uppercase; 
+      transition: background 0.3s;
+    }
+    nav a:hover { background: var(--light-green); }
+
+    /* Section Styling */
+    section { max-width: 1200px; margin: 40px auto; padding: 0 15px; }
+    h2.section-title { text-align: center; margin-bottom: 25px; color: var(--deep-green); font-size: 26px; text-transform: uppercase; }
+    h2.section-title::after { content: ''; width: 60px; height: 4px; background: var(--green); display: block; margin: 8px auto; border-radius: 2px; }
+
+    /* Grid Layout for Info Section */
+    .info-container { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 20px; 
+    }
+    .card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+
+    .about-box { 
+      background: #f9f9f9; 
+      padding: 15px; 
+      border-top: 4px solid var(--green); 
+      border-radius: 8px; 
+      margin-top: 15px; 
+    }
+    .about-box h4 { color: var(--deep-green); margin-bottom: 5px; font-size: 14px; text-transform: uppercase; }
+
+    /* Nested Grid for Factsheet */
+    .factsheet-grid { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 12px; 
+    }
+    .fact-box { background: #f9f9f9; padding: 12px; border-left: 4px solid var(--green); border-radius: 4px; }
+    .fact-label { font-size: 10px; color: #666; font-weight: 600; text-transform: uppercase; }
+    .fact-value { font-size: 13px; color: var(--deep-green); font-weight: 700; }
+
+    /* Grid for Services */
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+      gap: 25px; 
+    }
+    .service-box { 
+      background: var(--white); 
+      padding: 25px; 
+      border-radius: 12px; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+      border-top: 6px solid var(--green); 
+      display: flex; 
+      flex-direction: column; 
+    }
+    .service-box h3 { 
+      color: var(--deep-green); 
+      margin-bottom: 15px; 
+      font-size: 19px; 
+      border-bottom: 2px solid #f0f0f0; 
+      padding-bottom: 10px; 
+      text-transform: uppercase; 
+    }
+    
+    .option-item { 
+      display: flex; 
+      align-items: flex-start; 
+      font-size: 13px; 
+      margin-bottom: 12px; 
+      cursor: pointer; 
+      color: #444; 
+      transition: color 0.2s;
+    }
+    .option-item:hover { color: var(--light-green); }
+    .option-item input { margin-right: 12px; margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green); flex-shrink: 0; }
+
+    /* Buttons */
+    .btn { 
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px; 
+      background: var(--deep-green); 
+      color: #fff !important; 
+      border-radius: 6px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      cursor: pointer; 
+      border: none; 
+      transition: 0.3s; 
+      font-size: 14px;
+    }
+    .btn:hover { background: var(--green); color: #000 !important; }
+    .quote-btn { width: 100%; margin-top: auto; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    .btn-email { background: #333; }
+    .btn-whatsapp { background: #25D366; }
+    .btn-flex { flex: 1; min-width: 140px; }
+
+    footer { background: var(--deep-green); color: #fff; padding: 30px; text-align: center; margin-top: 50px; font-size: 14px; }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      header { padding: 20px 10px; }
+      .top-bar { justify-content: center; text-align: center; gap: 5px; }
+      nav a { padding: 10px; font-size: 11px; flex: 1 1 45%; text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .factsheet-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div>📞 <a href="tel:9930157867">Abdullah Sayed: 9930157867</a></div>
+      <div>✉️ <a href="mailto:hvac.task@gmail.com">hvac.task@gmail.com</a></div>
+    </div>
+    <div class="hero">
+      <h1>THERMO <span>AIR SYSTEMS KING</span></h1>
+      <p>All kinds of HVAC, Ventilation, Kitchen Ducting Fabrication, Erection, Insulation & Grill Works</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#legal">Legal</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <div class="info-container">
+      <div class="card">
+        <h2 class="section-title" style="text-align: left;">About Us</h2>
+        <p style="font-size: 14px;"><strong>Thermo Air Systems King</strong> (Est. 2009) is a leader in HVAC ventilation and ducting solutions. We specialize in high-quality fabrication and installation of MS, SS, GI, and Aluminium systems for industrial and commercial projects.</p>
+        <div class="about-box">
+          <h4>🏢 Office Address</h4>
+          <p>16/43 Ulfat Bai Building, Quresh Nagar, Kurla (East), Mumbai - 400070</p>
+        </div>
+        <div class="about-box" style="border-top-color: var(--light-green);">
+          <h4>🏭 Factory Unit</h4>
+          <p>Kasam Compound, Shastri Nagar, Air India Road, Kalina, Santacruz East, Mumbai - 400029</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title" style="text-align: left;">Factsheet</h2>
+        <div class="factsheet-grid">
+          <div class="fact-box"><div class="fact-label">Nature</div><div class="fact-value">Manufacturer</div></div>
+          <div class="fact-box"><div class="fact-label">CEO</div><div class="fact-value">Abdullah Sayed</div></div>
+          <div class="fact-box"><div class="fact-label">Established</div><div class="fact-value">2009</div></div>
+          <div class="fact-box"><div class="fact-label">Employees</div><div class="fact-value">Up to 10</div></div>
+          <div class="fact-box"><div class="fact-label">Status</div><div class="fact-value">Proprietorship</div></div>
+          <div class="fact-box"><div class="fact-label">Turnover</div><div class="fact-value">0 - 40 L</div></div>
+          <div class="fact-box" style="grid-column: 1 / -1;"><div class="fact-label">GST Date</div><div class="fact-value">27-04-2023</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Specialized Services</h2>
+    <div class="services-grid">
+      
+      <div class="service-box" id="hvac-box">
+        <h3>HVAC System</h3>
+        <label class="option-item"><input type="checkbox" value="HVAC Duct fabrication & installation"> HVAC Duct fabrication & installation</label>
+        <label class="option-item"><input type="checkbox" value="Chilled water pipe insulation & cladding"> Chilled water pipe insulation & cladding</label>
+        <label class="option-item"><input type="checkbox" value="Installation & insulation"> Installation & insulation</label>
+        <label class="option-item"><input type="checkbox" value="Old duct repairing & replacement"> Old duct repairing & replacement</label>
+        <label class="option-item"><input type="checkbox" value="Grills & diffusers"> Grills & diffusers</label>
+        <label class="option-item"><input type="checkbox" value="MS Fabrication work"> MS Fabrication work</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('HVAC System', 'hvac-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="vent-box">
+        <h3>Ventilation</h3>
+        <label class="option-item"><input type="checkbox" value="Kitchen exhaust system with fan/blower"> Kitchen exhaust system with fan/blower</label>
+        <label class="option-item"><input type="checkbox" value="SS kitchen hood supply & installation"> SS kitchen hood supply & installation</label>
+        <label class="option-item"><input type="checkbox" value="Kitchen duct fabrication & installation"> Kitchen duct fabrication & installation</label>
+        <label class="option-item"><input type="checkbox" value="Industrial ventilation"> Industrial ventilation</label>
+        <label class="option-item"><input type="checkbox" value="Parking ventilation fans/scrubber"> Parking ventilation axial fans/scrubber</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('Ventilation', 'vent-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="duct-box">
+        <h3>Ducting</h3>
+        <label class="option-item"><input type="checkbox" value="MS duct Fabrication work"> MS duct Fabrication work</label>
+        <label class="option-item"><input type="checkbox" value="GI duct fabrication (Square/Oval)"> GI duct fabrication (Square/Oval)</label>
+        <label class="option-item"><input type="checkbox" value="SS duct fabrication & installation"> SS duct fabrication & installation</label>
+        <label class="option-item"><input type="checkbox" value="Elliptical Ducting"> Elliptical Duct fabrication</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('Ducting', 'duct-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="insul-box">
+        <h3>Insulation</h3>
+        <label class="option-item"><input type="checkbox" value="AHU room acoustic"> AHU room acoustic</label>
+        <label class="option-item"><input type="checkbox" value="Chiller insulation"> Chiller insulation</label>
+        <label class="option-item"><input type="checkbox" value="Thermal Insulation"> Thermal Insulation</label>
+        <label class="option-item"><input type="checkbox" value="Acoustic Lining"> Acoustic Lining</label>
+        <label class="option-item"><input type="checkbox" value="Nitrile Rubber/Underdeck"> Nitrile Rubber & Underdeck</label>
+        <label class="option-item"><input type="checkbox" value="Pipe Insulation"> Pipe Insulation</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('Insulation', 'insul-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="ahu-box">
+        <h3>AHU Works</h3>
+        <label class="option-item"><input type="checkbox" value="AHU/TFA installation"> AHU & TFA installation</label>
+        <label class="option-item"><input type="checkbox" value="Filter Replacement"> Filter Replacement</label>
+        <label class="option-item"><input type="checkbox" value="Coil Repair/Replacement"> Coil Repair/Replacement</label>
+        <label class="option-item"><input type="checkbox" value="Blower Alignment"> Blower Alignment</label>
+        <label class="option-item"><input type="checkbox" value="AHU Refurbishing"> AHU Refurbishing</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('AHU Works', 'ahu-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="acc-box">
+        <h3>Accessories</h3>
+        <label class="option-item"><input type="checkbox" value="VAV/VCD/NRD supply"> VAV, VCD & NRD supply</label>
+        <label class="option-item"><input type="checkbox" value="SMD/MFD installation"> SMD & MFD installation</label>
+        <label class="option-item"><input type="checkbox" value="Linear/Slot grill"> Linear & Slot grill</label>
+        <label class="option-item"><input type="checkbox" value="Ceiling dumper/Louvres"> Ceiling dumper & Louvres</label>
+        <label class="option-item"><input type="checkbox" value="Other MS fabrication"> Other MS fabrication work</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('Accessories', 'acc-box')">Enquiry for Quotation</button>
+      </div>
+
+      <div class="service-box" id="clad-box" style="grid-column: 1 / -1; max-width: 600px; margin: auto; width: 100%;">
+        <h3>Cladding Solutions</h3>
+        <label class="option-item"><input type="checkbox" value="Aluminium duct/pipe cladding"> Aluminium duct & pipe cladding</label>
+        <label class="option-item"><input type="checkbox" value="SS duct/pipe cladding"> SS duct & pipe cladding</label>
+        <label class="option-item"><input type="checkbox" value="DG pipe cladding"> DG pipe cladding</label>
+        <label class="option-item"><input type="checkbox" value="Tank cladding"> Tank cladding & others</label>
+        <button class="btn quote-btn" onclick="sendWhatsApp('Cladding', 'clad-box')">Enquiry for Quotation</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="legal">
+    <h2 class="section-title">Statutory Profile</h2>
+    <div class="card" style="text-align: center;">
+        <p style="color: #666; font-size: 13px;">OFFICIAL GSTIN</p>
+        <h3 style="font-size: clamp(1.2rem, 5vw, 1.8rem); color: var(--deep-green); margin: 5px 0;">27AAZPI6636D2Z9</h3>
+        <p><strong>Registered Proprietor:</strong> Abdullah Ismail Sayed</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="card" style="text-align: center; max-width: 600px; margin: auto;">
+      <p style="font-size: 18px; color: var(--deep-green); font-weight: 700;">Abdullah Ismail Sayed</p>
+      <p style="margin-bottom: 5px;">📞 +91 9930157867</p>
+      <p>✉️ hvac.task@gmail.com</p>
+      <div class="btn-group">
+        <a href="tel:9930157867" class="btn btn-flex">Call Now</a>
+        <a href="mailto:hvac.task@gmail.com" class="btn btn-email btn-flex">Email Us</a>
+        <a href="https://wa.me/919930157867" target="_blank" class="btn btn-whatsapp btn-flex">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Thermo Air Systems King. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function sendWhatsApp(serviceName, boxId) {
+      const phoneNumber = "919930157867";
+      const box = document.getElementById(boxId);
+      const selected = Array.from(box.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+      
+      if (selected.length === 0) { 
+        alert("Select at least one service to continue"); 
+        return; 
+      }
+      
+      let message = `Hello Mr. Abdullah Sayed, I have an *Enquiry for Quotation* regarding *${serviceName}* services: \n- ` + selected.join("\n- ");
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
